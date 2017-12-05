@@ -1,54 +1,114 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
+title       : Chapter 1-Basic Python Syntax
+description : You will 
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 ---
-## A really bad movie
+## Lesson 1-Getting Started
 
 ```yaml
-type: MultipleChoiceExercise
+type: NormalExercise
 lang: python
 xp: 50
 skills: 1
 key: 954c87ad6f
 ```
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movies have the worst rating assigned to them?
+Run the code on the side to see what happen, these are some of the things you will learn in chapter 1.
 
 `@instructions`
-- Long movies, clearly
-- Short movies, clearly
-- Long movies, but the correlation seems weak
-- Short movies, but the correlation seems weak
+- basic syntax
+- variables
+- operators
+- tabbing
 
 `@hint`
-Have a look at the plot. Do you see a trend in the dots?
+Press run
 
-`@pre_exercise_code`
+`@sample_code`
 ```{python}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
+chapter = '1'
+def printChapter():
+    print('this is chapter ' + chapter)
+printChapter()
+```
 
-import pandas as pd
-import matplotlib.pyplot as plt
-
-movies = pd.read_csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-plt.scatter(movies.runtime, movies.rating)
-plt.show()
+`@solution`
+```{python}
+chapter = '1'
+def printChapter():
+    print('this is chapter ' + chapter)
+printChapter()
 ```
 
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
 
-msg_bad = "That is not correct!"
-msg_success = "Exactly! The correlation is very weak though."
-test_mc(4, [msg_bad, msg_bad, msg_bad, msg_success])
+success_msg("Now you had a look of what python codes look like, continue to the next lesson to learn more about the details.")
 ```
 
+---
+## Lesson 2-How to write codes in Python
+
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: b7c3547fdd
+```
+
+Each line of code in python act as a command. It tells the computer what to do. These code may come in many different forms, each of them has their own functions. It may be to perform an action(a function), saving datas(variables), or creating an objects(classes). Try typing the function `print('Hello World')` into the editor on the side and see what happen.
+
+`@instructions`
+- type `print('Hello World')` in the editor
+
+`@hint`
+type print('Hello World') in the editor
+
+`@solution`
+```{python}
+print('Hello World')
+```
+
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_output_contains('Hello World', pattern=False, no_output_msg='Did you type the correct text in the editor? Your output is a bit off.')
+success_msg("Great Job! Head on to the next chapter to see more details.")
+```
+---
+
+## Lesson2-How to write codes in Python(2)
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: 55f46baa23
+```
+
+the `print()` function you used in the last exercise is a "function" it tells your computer what to do. A function in python takes in an arguement which should be entered between the parentheses. In this case, the `print()` function takes in a text and display it to the screen.
+
+`@instructions`
+- use the `print()` function to display your name on the screen
+
+`@hint`
+type print("your name")
+
+`@solution`
+```{python}
+print('name')
+```
+
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_output_contains('\w+', pattern=True, no_output_msg='Did you type the correct text in the editor? Your output is a bit off.')
+success_msg("Great Job! Head on to the next chapter to see what are variables.")
+```
 ---
 ## Plot the movies yourself
 
