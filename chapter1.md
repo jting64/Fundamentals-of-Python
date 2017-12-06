@@ -120,7 +120,7 @@ skills: 1
 key: b700af6d53
 ```
 
-A variable is a way to store datas in python. You can name the value you want to store to make your coding process more efficient and readable. There are many types of variables, each of them function in different ways by storing different types of value. These types of values include integers, floating point numbers, strings, arrays...etc. In this lesson, you will learn how to declare and use a variable.
+A variable is a way to store datas in python. You can name the value you want to store to make your coding process more efficient and readable. There are many types of variables, each of them function in different ways by storing different types of value. These types of values include integers, floating point numbers(number with decimal places), strings, arrays...etc. In this lesson, you will learn how to declare and use a variable.
 
 `@instructions`
 - print out the value of the variables by typing their names into the `print()` function
@@ -145,7 +145,7 @@ print(___)
 ```{python}
 integer_variable = 1
 string_variable = 'Hi'
-float_variable = 0.1
+float_variable = 0.5
 
 print(integer_variable)
 print(string_variable)
@@ -157,93 +157,72 @@ print(float_variable)
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
 test_output_contains("1", pattern=False, no_output_msg="did you typed use the variable \"integer_variable\"?")
 test_output_contains("Hi", pattern=False, no_output_msg="did you typed use the variable \"string_variable\"?")
-test_output_contains("0.1", pattern=False, no_output_msg="did you typed use the variable \"float_variable\"?")
+test_output_contains("0.5", pattern=False, no_output_msg="did you typed use the variable \"float_variable\"?")
 success_msg("Great Job! Head on to the next chapter to see what are operators.")
 ```
-
 ---
-## Plot the movies yourself
-
+## Lesson 3.1-Operators
 ```yaml
-type: NormalExercise
+type: MultipleChoiceExercise
 lang: python
-xp: 100
+xp: 50
 skills: 1
-key: 1fc5142c40
+key: 381492d879
 ```
 
-Do you remember the plot of the last exercise? Let's make an even cooler plot!
+Operators are used for making calculations. Most of the operators are very intuitional, it looks just like the ones we used everyday. For example, `+` represents plus, `-` represents minus, `*` represents multiplying and `/` represents division. You can use `**` for raising a number to a power, for example `a**b` is a raised to the b power. Note that the order of operation still applies even though the compiler reads your code line by line.
 
-A dataset of movies, `movies`, is available in the workspace.
+what is the output of 12**2+4/2?
 
 `@instructions`
-- The first function, `np.unique()`, uses the `unique()` function of the `numpy` package to get integer values for the movie genres. You don't have to change this code, just have a look!
-- Import `pyplot` in the `matplotlib` package. Set an alias for this import: `plt`.
-- Use `plt.scatter()` to plot `movies.runtime` onto the x-axis, `movies.rating` onto the y-axis and use `ints` for the color of the dots. You should use the first and second positional argument, and the `c` keyword.
-- Show the plot using `plt.show()`.
+- 146
+- 146.0
+- 74
+- 74.0
 
 `@hint`
-- You don't have to program anything for the first instruction, just take a look at the first line of code.
-- Use `import ___ as ___` to import `matplotlib.pyplot` as `plt`.
-- Use `plt.scatter(___, ___, c = ___)` for the third instruction.
-- You'll always have to type in `plt.show()` to show the plot you created.
-
-`@pre_exercise_code`
-```{python}
-import pandas as pd
-movies = pd.read_csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-import numpy as np
-```
-
-`@sample_code`
-```{python}
-# Get integer values for genres
-_, ints = np.unique(movies.genre, return_inverse = True)
-
-# Import matplotlib.pyplot
-
-
-# Make a scatter plot: runtime on  x-axis, rating on y-axis and set c to ints
-
-
-# Show the plot
-
-```
-
-`@solution`
-```{python}
-# Get integer values for genres
-_, ints = np.unique(movies.genre, return_inverse = True)
-
-# Import matplotlib.pyplot
-import matplotlib.pyplot as plt
-
-# Make a scatter plot: runtime on  x-axis, rating on y-axis and set c to ints
-plt.scatter(movies.runtime, movies.rating, c=ints)
-
-# Show the plot
-plt.show()
-```
+type the expression into the python shell to test what the output is.
 
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+msg1 = "Division in python 3 always returns a floating point number."
+msg2 = "Correct! The .0 at the end indicates that the output is a floating point number. Head on to the next lesson to learn how to combine variables and operators."
+msg3 = "Remember that the order of operation still applies, also, division in python 3 always returns a floating point number."
+msg4 = "Remember that the order of operation still aplies."
+test_mc(2, [msg1, msg2, msg3, msg4])
+```
 
-test_function("numpy.unique",
-              not_called_msg = "Don't remove the call of `np.unique` to define `ints`.",
-              incorrect_msg = "Don't change the call of `np.unique` to define `ints`.")
+---
+## Lesson 3.2-Combining Operators and Variables
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: '22803e5741'
+```
+Now that you learned about operators and variables, it is time to combine these two together. It works just like how normal operators on numbers would, however, it has a few more features. You can add a `=` after the operator to assign results to a variable. For example, the expression `a+=b` is equivalent to `a=a+b` and `a/=b` is equivalent to `a=a/b`. 
 
-test_object("ints",
-            undefined_msg = "Don't remove the definition of the predefined `ints` object.",
-            incorrect_msg = "Don't change the definition of the predefined `ints` object.")
+`@instructions`
+use the description above to help you finish the code.
 
-test_import("matplotlib.pyplot", same_as = True)
+`@hint`
 
-test_function("matplotlib.pyplot.scatter",
-              incorrect_msg = "You didn't use `plt.scatter()` correctly, have another look at the instructions.")
+`@sample_code`
+```{python}
+a = 4
+b = 2
+# assign the sum of a and b to a new variable called sum_ab
+sum_ab = ___
+# print out the variable sum_ab
+___
+# assign the product of a and b to a new variable called product_ab
+product_ab = ___
+# print out the variable product_ab
+___
+```
 
-test_function("matplotlib.pyplot.show")
-
-success_msg("Great work!")
+`@solution`
+```{python}
 ```
