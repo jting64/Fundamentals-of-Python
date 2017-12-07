@@ -225,4 +225,245 @@ ___
 
 `@solution`
 ```{python}
+a = 4
+b = 2
+# assign the sum of a and b to a new variable called sum_ab
+sum_ab = a + b
+# print out the variable sum_ab
+print(sum_ab)
+# assign the product of a and b to a new variable called product_ab
+product_ab = a * b
+# print out the variable product_ab
+print(product_ab)
+```
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_output_contains("6", no_output_msg = "Did you assign the sum of a and b to sum_ab and print it out?", pattern = False)
+test_output_contains("8", no_output_msg = "Did you assign the product of a and b to sum_ab and print it out?", pattern = False)
+success_msg("Great Work! Head on to the next lesson to do one more exercise on operators and variables")
+```
+
+---
+### Lesson 3.3-Combining Operators and Variables(2)
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: ef4bbe63f7
+```
+Now that you learned about operators and variables, it is time to combine these two together. It works just like how normal operators on numbers would, however, it has a few more features. You can add a `=` after the operator to assign results to a variable. For example, the expression `a+=b` is equivalent to `a=a+b` and `a/=b` is equivalent to `a=a/b`. 
+
+`@instructions`
+use the `+=`, `-=`, `*=`, `/=` operator to perform the tasked described.
+
+`@hint`
+use `a-=1` or `a=a-1` to minus 1 from the variable a.
+
+`@sample_code`
+```{python}
+a = 5;
+# add 5 to the variable a
+a __ 5
+# print out the variable a
+print(__)
+a = 5;
+# minus 5 to the variable a
+a __ 5
+# print out the variable a
+print(__)
+a = 5;
+# multiply 5 to the variable a
+a __ 5
+# print out the variable a
+print(__)
+a = 5;
+# divide a by 5
+a __ 5
+# print out the variable a
+print(__)
+```
+
+`@solution`
+```{python}
+a = 5;
+# add 5 to the variable a
+a += 5
+# print out the variable a
+print(a)
+a = 5;
+# minus 5 to the variable a
+a _-=_ 5
+# print out the variable a
+print(a)
+a = 5;
+# multiply 5 to the variable a
+a *= 5
+# print out the variable a
+print(a)
+a = 5;
+# divide a by 5
+a /= 5
+# print out the variable a
+print(a)
+```
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_student_typed("+=", not_typed_msg = "Did you use the += operator?", pattern = False)
+test_student_typed("-=", not_typed_msg = "Did you use the -= operator?", pattern = False)
+test_student_typed("*=", not_typed_msg = "Did you use the *= operator?", pattern = False)
+test_student_typed("/=", not_typed_msg = "Did you use the /= operator?", pattern = False)
+test_output_contains("10", no_output_msg = "Did you use the += operator?", pattern = False)
+test_output_contains("0", no_output_msg = "Did you use the += operator?", pattern = False)
+test_output_contains("25", no_output_msg = "Did you use the += operator?", pattern = False)
+test_output_contains("1", no_output_msg = "Did you use the += operator?", pattern = False)
+success_msg("Great Work! Head on to the next lesson to learn about importing")
+```
+
+
+---
+## Lesson 1.4-importing modules into python
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: e88a2f919b
+```
+There are a lot of built in modules in python you can use to make your code more efficient. However, not all modules are built-in, you have to import a package in order to access some of it. In this lesson, you will learn how to use the `import` command in python with the math module. The `import` keyword imports the module specified after it. Usually, the line of the command is put on the very top of the program. Importing is like declaring a variable, if you do not put it in the very front, it may not be accessible to all of the code.
+
+`@instructions`
+`sqrt()` is a function in the `math` module, it is a function tat return the square root of the parameter. However, the module `math` is not defined, so it cannot be accessed. Use `import` to fix the code.
+
+`@hint`
+type `import math` at the top of the code
+
+`@sample_code`
+```{python}
+___
+x = 4
+y = math.sqrt(x)
+print(y)
+```
+
+`@solution`
+```{python}
+import math
+x = 4
+y = math.sqrt(x)
+print(y)
+```
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_import("math",not_imported_msg="did you import the math module?")
+sucess_msg("Head on to the next section to learn how to import the math module quicker and easier")
+```
+---
+## Lesson 1.4-importing modules into python
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: 242ff20c30
+```
+When you use an imported module, you have to use the code `module name.function` it is quite inefficient if the module name is too long. Python has a way to increase your effciency. You can import a function using a different name using the keyword `as`. Now you can call the specified funtion by using `specified name.function`.
+
+`@instructions`
+`import` the module `math` as `m` and fill in the blanks. Also, take a look at the several math functions.
+
+`@hint`
+use `import math as m` to import math using the name `m`. If you want to use a certain function, use `m.function`.
+
+`@sample_code`
+```{python}
+___
+# rasing x to the yth power
+x = 5
+y = 5
+z = ___.pow(x,y)
+print(z)
+
+# sine function
+x = 0
+y = ___.sin(x)
+print (y)
+
+# constants
+x = ___.e
+print(x)
+
+x = ___.pi
+print(x)
+
+```
+
+`@solution`
+```{python}
+import math as m
+# rasing x to the yth power
+x = 5
+y = 5
+z = m.pow(x,y)
+print(z)
+
+# sine function
+x = 0
+y = m.sin(x)
+print (y)
+
+# constants
+x = m.e
+print(x)
+
+x = m.pi
+print(x)
+
+```
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_import("math", same_as = False, not_imported_msg="did you import the math module?")
+sucess_msg("Head on to the next section to learn how to import specific functions using from")
+```
+---
+## Lesson 4.3-importing modules into python(3)
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: 82e7247ef1
+```
+You can import something contains directly in a module in python using the from command. Remember the `.sqrt()` function used in the previous lesson? It is quite annoying if you have to square a lot of things at a same time, so, you can `import` a function `from` a module using the command `from modulename import function`.
+
+`@instructions`
+figure out the code that fits the blank space on the top.
+
+`@hint`
+type `from math import sqrt` at the top of the code
+
+`@sample_code`
+```{python}
+___
+x = 5
+y = sqrt(x)
+print(y)
+```
+
+`@solution`
+```{python}
+from math import sqrt
+x = 5
+y = sqrt(x)
+print(y)
+
+```
+`@sct`
+```{python}
+# SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
+test_import("sqrt", same_as = )
 ```
