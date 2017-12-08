@@ -5,6 +5,14 @@ attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 ---
+## test
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: 82e7247ef1
+---
 ## Lesson 1.1-Getting Started
 
 ```yaml
@@ -263,7 +271,7 @@ use `a-=1` or `a=a-1` to minus 1 from the variable a.
 
 `@sample_code`
 ```{python}
-a = 5;
+a = 5
 # add 5 to the variable a
 a __ 5
 # print out the variable a
@@ -287,14 +295,14 @@ print(__)
 
 `@solution`
 ```{python}
-a = 5;
+a = 5
 # add 5 to the variable a
 a += 5
 # print out the variable a
 print(a)
 a = 5;
 # minus 5 to the variable a
-a _-=_ 5
+a -= 5
 # print out the variable a
 print(a)
 a = 5;
@@ -324,7 +332,7 @@ success_msg("Great Work! Head on to the next lesson to learn about importing")
 
 
 ---
-## Lesson 1.4-importing modules into python
+## Lesson 4.1-importing modules into python
 ```yaml
 type: NormalExercise
 lang: python
@@ -358,11 +366,11 @@ print(y)
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-test_import("math",not_imported_msg="did you import the math module?")
-sucess_msg("Head on to the next section to learn how to import the math module quicker and easier")
+test_import("math",not_imported_msg="did you import the math module?", same_as=True)
+success_msg("Head on to the next section to learn how to import the math module quicker and easier.")
 ```
 ---
-## Lesson 1.4-importing modules into python
+## Lesson 4.2-importing modules into python
 ```yaml
 type: NormalExercise
 lang: python
@@ -426,7 +434,7 @@ print(x)
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-test_import("math", same_as = False, not_imported_msg="did you import the math module?")
+test_import("math", same_as = False, not_imported_msg="did you import the math module?", incorrect_as_msg = "did you import the math module `as m`?")
 sucess_msg("Head on to the next section to learn how to import specific functions using from")
 ```
 ---
@@ -436,7 +444,7 @@ type: NormalExercise
 lang: python
 xp: 50
 skills: 1
-key: 82e7247ef1
+key: 6373db0a3b
 ```
 You can import something contains directly in a module in python using the from command. Remember the `.sqrt()` function used in the previous lesson? It is quite annoying if you have to square a lot of things at a same time, so, you can `import` a function `from` a module using the command `from modulename import function`.
 
@@ -465,5 +473,8 @@ print(y)
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-test_import("sqrt", same_as = )
+test_import("math.sqrt()", same_as = False, not_imported_msg="did you import sqrt from math?" )
+success_msg("Great Job, head on to the next section to learn about how to use file I/O")
 ```
+---
+## Lesson 5.1 File I/O
