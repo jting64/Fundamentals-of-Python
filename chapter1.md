@@ -5,14 +5,6 @@ attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 ---
-## test
-```yaml
-type: NormalExercise
-lang: python
-xp: 50
-skills: 1
-key: 82e7247ef1
----
 ## Lesson 1.1-Getting Started
 
 ```yaml
@@ -115,11 +107,10 @@ print('name')
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
 test_output_contains('\w+', pattern=True, no_output_msg='Did you type the correct text in the editor? Your output is a bit off.')
-success_msg("Great Job! Head on to the next chapter to see what are variables.")
+success_msg("Great Job! Head on to the next chapter to learn what is a comment and how to make one in python.")
 ```
 ---
-
-## Lesson 2-variables
+##Lesson 1.4-Comments
 ```yaml
 type: NormalExercise
 lang: python
@@ -128,7 +119,37 @@ skills: 1
 key: b700af6d53
 ```
 
-A variable is a way to store datas in python. You can name the value you want to store to make your coding process more efficient and readable. There are many types of variables, each of them function in different ways by storing different types of value. These types of values include integers, floating point numbers(number with decimal places), strings, arrays...etc. In this lesson, you will learn how to declare and use a variable.
+A comment is a line of code that will be ignored by the compiler. Comments are useful because it helps you keep track of your progress. When you have hundreds or thousands of lines of code, it is very hard to keep track of what is what.
+It is very easy to create a comment in python. There are three ways to make a comment:
+1. Single line comment: add `##` in front of your code.
+ex. `##this is a comment`
+2. Single line comment: add `"""` at the front and back of your code.
+ex. `"""this is a comment"""`
+3. Multi-line comment: add `"""` at the start and end of your code.
+
+`@instructions`
+- comment out the code with any way you like.
+
+`@sample_code`
+comment out this
+comment out this too
+
+`@sct`
+success_msg("Great Job! Head on to the next section to learn about variables.")
+
+
+---
+
+## Lesson 2.1-variables
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: '1e51949928'
+```
+
+A variable is a way to store datas in python. You can name the value you want to store to make your coding process more efficient and readable. There are many types of variables, each of them function in different ways by storing different types of value. These types of values include integers, floating point numbers(number with decimal places), strings, boolean(True or False), lists...etc. In this lesson, you will learn how to declare and use a variable.
 
 `@instructions`
 - print out the value of the variables by typing their names into the `print()` function
@@ -137,13 +158,16 @@ A variable is a way to store datas in python. You can name the value you want to
 print out `1` by using `print(integer_variable)`
 print out `Hi` by using `print(string_variable)`
 print out `0.1` by using `print(float_variable)`
+print out `True` by using `print(bool_variable)`
 
 `@sample_code`
 ```{python}
 integer_variable = 1
 string_variable = 'Hi'
 float_variable = 0.1
+bool_variable = True
 
+print(___)
 print(___)
 print(___)
 print(___)
@@ -154,10 +178,12 @@ print(___)
 integer_variable = 1
 string_variable = 'Hi'
 float_variable = 0.5
+bool_variable = True
 
 print(integer_variable)
 print(string_variable)
 print(float_variable)
+print(bool_variable)
 ```
 
 `@sct`
@@ -166,7 +192,57 @@ print(float_variable)
 test_output_contains("1", pattern=False, no_output_msg="did you typed use the variable \"integer_variable\"?")
 test_output_contains("Hi", pattern=False, no_output_msg="did you typed use the variable \"string_variable\"?")
 test_output_contains("0.5", pattern=False, no_output_msg="did you typed use the variable \"float_variable\"?")
-success_msg("Great Job! Head on to the next chapter to see what are operators.")
+test_output_contains("True", pattern=False, no_output_msg="did you typed use the variable \"bool_variable\"?")
+success_msg("Great Job! Head on to the next chapter to see how to convert between types.")
+```
+---
+##Lesson 2.2-Type conversion
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: 381492d879
+```
+
+As you can see, there are different type of variables in python. You are also able to convert between variable types to fit your intention. To convert between variables, you will have to call the following functions:
+- `int()` to convert a number to an integer, the number may be a floating point number, note that this may cause the overflow of data if not executed properly.
+- `float()` to convert a number to a floating point number.
+- `bool()` to convert a number to a floating point number.
+- `str()` to convert a number/boolean to a string(text).
+These functions are useful because it may fix inconsistent data. For example, you cannot add a flaoting point number to a string, however, by using these function, you are able to create consistent data that can successfully compile.
+
+`@instructions`
+- The `print()` function generates an error because the data in the parameter is inconsistent, fix it by using the appropriate function described above.
+- The variable `e_str` is a type string so it cannot be use to do calculations. Convert it to a floating point number and store it in the variable `e`.
+
+`@sample_code`
+```{python}
+age = 30
+print("age: " + 30)
+
+e_str = "2.71828"
+e = ___
+```
+
+`@hint`
+- use `str(30)` to convert the integer 30 to a string, making the data consistent in the `print()` function.
+- use `float(e_str)` to convert the variable e_string to a float.
+
+`@solution`
+```{python}
+age = 30
+print("age: " + str(30))
+
+e_string = "2.71828"
+e = float(e_str)
+```
+
+`@sct`
+```{python}
+test_function("str", not_called_msg = "On the line with `print()`, make sure to change `30` to `str(30)`.")
+test_function("float", not_called_msg = "In order to convert `e_str` to a float, be sure to use the `float()` function.")
+success_msg("Great Job! Head on to the next section to learn about operators")
 ```
 ---
 ## Lesson 3.1-Operators
@@ -175,7 +251,7 @@ type: MultipleChoiceExercise
 lang: python
 xp: 50
 skills: 1
-key: 381492d879
+key: '5825594441'
 ```
 
 Operators are used for making calculations. Most of the operators are very intuitional, it looks just like the ones we used everyday. For example, `+` represents plus, `-` represents minus, `*` represents multiplying and `/` represents division. You can use `**` for raising a number to a power, for example `a**b` is a raised to the b power. Note that the order of operation still applies even though the compiler reads your code line by line.
@@ -253,7 +329,7 @@ success_msg("Great Work! Head on to the next lesson to do one more exercise on o
 ```
 
 ---
-### Lesson 3.3-Combining Operators and Variables(2)
+## Lesson 3.3-Combining Operators and Variables(2)
 ```yaml
 type: NormalExercise
 lang: python
@@ -477,4 +553,217 @@ test_import("math.sqrt()", same_as = False, not_imported_msg="did you import sqr
 success_msg("Great Job, head on to the next section to learn about how to use file I/O")
 ```
 ---
-## Lesson 5.1 File I/O
+## Lesson 5.1-Reading files:csv
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: f413f98b3d
+```
+
+This is a brief introduction of reading files into your program. This is important to you because there is a huge chance that the source of your data is not on your own computer. In this lesson, I will teach you how to use the `pandas` module to import a csv file. A csv file is a file that is separated by commas, hence csv(comma separated value).
+The `read_csv` function of the `pandas` module reads in the data of the argument and print it out.
+
+`@instructions`
+- import `pandas` as `pd`
+- The php file contains stock market index of Asia.
+
+
+`@sample_code`
+```{python}
+___
+___.read_csv("https://s3.ap-northeast-2.amazonaws.com/datacamp-fundamentals-of-python/SacramentocrimeJanuary2006.csv")
+
+#read in data
+```
+
+`@hint`
+- Use `import pandas as pd` to import the `pandas` module
+
+`@solution`
+```{python}
+import pandas as pd
+#read in data
+pd.read_csv("https://s3.ap-northeast-2.amazonaws.com/datacamp-fundamentals-of-python/SacramentocrimeJanuary2006.csv")
+```
+
+`@sct`
+```{python}
+test_import("pandas", same_as=False, not_imported_msg="did you import `pandas`?", incorrect_as_msg="did you import `pandas` as `pd`?")
+success_msg("Great Work! Head on to the next section to learn how to read in php/html files")
+```
+---
+## Lesson 5.2-Reading files:html
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: '1886562996'
+```
+
+The `pandas` module contains another function called `read_html`. It works just like the `read_csv` function.
+
+`@instructions`
+- import `pandas` as `pd`
+- The csv file contains the crime record of Sacramento in January 2006.
+
+
+`@sample_code`
+```{python}
+___
+#read in data
+___.read_html("http://www.stockq.org/market/asia.php")
+
+```
+
+`@hint`
+- Use `import pandas as pd` to import the `pandas` module
+
+`@solution`
+```{python}
+import pandas as pd
+#read in data
+pd.read_html("http://www.stockq.org/market/asia.php")
+
+```
+
+`@sct`
+```{python}
+test_import("pandas", same_as=False, not_imported_msg="did you import `pandas`?", incorrect_as_msg="did you import `pandas` as `pd`?")
+success_msg("Great Work! Head on to the next section to learn about the datetime module")
+```
+
+---
+## Lesson 6.1-datetime module:timedelta
+
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: f0f24cf4d0
+```
+
+The datetime module is a useful tool since it can help with calculations about time. There are a lot of instatnce under the datetime module, such as `timedelta` and `datetime`. The `timedelta` instance help with storing units of time, such as hours and minutes. This instance of the `datetime` module is useful because you can save the time for having to convert between units.
+The `timedelta` function takes in a specific period of time with the specific unit.
+The `.days` function is used to show the number of days a `datetime` variable contains.
+The `.seconds` function is used to show how many seconds a `datetime` variable contains(not including the days).
+
+`@instructions`
+- import the `timedelta` instance from the `datetime` module.
+- print out how many `days` the variable `c` contains
+- print out how many `seconds` the variable `c` contains
+- print out how many hours the variable `c` contains, note that there are no .hours function.
+- print out how many minutes the variable `c` contains, not that there are no .minutes function.
+
+`@sample_code`
+```{python}
+___
+a = timedelta(days=2, hours=6)
+b = timedelta(hours=4.5)
+c = a + b
+#print out the number of days the variable c contains
+print(___)
+#print out the number of seconds the variable c contains
+print(___)
+#print out the minute and hour the variable c contains
+print(___)
+print(___)
+```
+
+`@hint`
+- Use `from datetime import timedelta` to import the `timedelta` instance from the datetime module.
+- Use `c.days` and `c.seconds` to get how many days and seconds the variable `c` contains, respectively. 
+- Use `c.seconds/3600` to get how many hours are in the variable `c`.
+
+`@solution`
+```{python}
+from datetime import timedelta
+a = timedelta(days=2, hours=6)
+b = timedelta(hours=4.5)
+c = a + b
+#print out the number of days the variable c contains
+print(c.days)
+#print out the number of seconds the variable c contains
+print(c.seconds)
+#print out the minute and hour the variable c contains
+print(c.seconds/3600)
+print(c.seconds/60)
+```
+
+`@sct`
+```{python}
+test_student_typed("c.seconds/3600", pattern = False, not_typed_msg="Did you print out the minute and hour the variable `c` contains?")
+test_student_typed("c.seconds/60", pattern = False, not_typed_msg="Did you print out the minute and hour the variable `c` contains?")
+test_output_contains("2", pattern=False, no_output_msg="Did you call the `.days` function?")
+test_output_contains("37800", pattern=False, no_output_msg="Did you call the `.seconds` function?")
+test_output_contains("10.5", pattern=False, no_output_msg="Did you print out the minute and hour the variable `c` contains")
+test_output_contains("630", pattern=False, no_output_msg="Did you print out the minute and hour the variable `c` contains")
+success_msg("Great Job! Head on to the next section to learn about another function of the datetime module")
+```
+---
+## Lesson 6.2-datetime module:datetime
+
+```yaml
+type: NormalExercise
+lang: python
+xp: 50
+skills: 1
+key: '1792610e03'
+```
+
+The datetime module has an instance called datetime. The datetime function is useful for specifying a specific date, the return value of this function is also formatted. The datetime function accepts three arguments, `year`, `month`, `day`. It can also take in additional information such as `hour`, `minute`, `second`. If these extra arguments are not specified, the default value will be 0. However, you must enter the first 3 argument or an error will be generated. For an example of `datetime`, `datetime(2012, 9, 23)`. If you subtract two variables that is generated by a `datetime` function, the result will be the same as calling a `timedelta` function. 
+
+`@instructions`
+- import the instance `datetime` from the `datetime` module
+- import the instance `timedelta` from the `datetime` module
+- add 10 days to the variable `a` by calling the `timedelta` function and print it out
+- store the value of `b-a` in the variable `d`
+- print out how many days the variable `d` contains
+
+`@sample_code`
+```{python}
+___
+a = datetime(2012, 9, 23)
+#add 10 days to the variable a
+a += ___
+#print out a
+print(___)
+b = datetime(2012, 12, 21)
+#store the value of b-a in the variable d
+d = ___
+#print out how many days the variable d contains
+print(___)
+```
+
+`@hint`
+- Use `from datetime import datetime` to import the instance `datetime` from the `datetime` module
+- Use `a+=datetime(2012, 9, 23)` to add 10 days to the variable `a`
+- Use `d.days` to get how many days the variable `d` contains
+
+
+`@solution`
+```{python}
+from datetime import datetime
+from datetime import timedelta
+a = datetime(2012, 9, 23)
+#add 10 days to the variable a
+a += timedelta(days=10)
+#print out a
+print(a)
+b = datetime(2012, 12, 21)
+#store the value of b-a in the variable d
+d = b - a
+#print out how many days the variable d contains
+print(d.days)
+```
+
+`@sct`
+```{python}
+# test_function("timedelta", not_called_msg = "Did you use the `timedelta()` function to add 10 days to the variable a?")
+test_output_contains("2012-10-03 00:00:00", no_output_msg="Did you add 10 days to the variable `a` by calling the `timedelta` function and print it out?")
+test_student_typed("d.days", not_typed_msg = "did you use `d.days` to get how many days the variable `d` contains?")
+success_msg("Great Job! You just finished chapter 1!")
+```
