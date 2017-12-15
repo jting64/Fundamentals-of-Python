@@ -752,7 +752,7 @@ print(___)
 
 `@hint`
 - Use `from datetime import datetime` to import the instance `datetime` from the `datetime` module
-- Use `a+=datetime(2012, 9, 23)` to add 10 days to the variable `a`
+- Use `a+=timedelta(days=10)` to add 10 days to the variable `a`
 - Use `d.days` to get how many days the variable `d` contains
 
 
