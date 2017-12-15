@@ -4,8 +4,8 @@ description : Insert the chapter description here
 ---
 ## Introducing Standard Data Types
 
-```yaml
-type: MultipleChoiceExercise
+ ```yaml
+ type: MultipleChoiceExercise
 lang: python
 xp: 50
 skills: 1
