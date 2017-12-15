@@ -1,6 +1,6 @@
 ---
 title       : Chapter 1-Basic Python Syntax
-description : You will 
+description : Introduction to python.
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
