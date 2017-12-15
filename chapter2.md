@@ -1,6 +1,6 @@
 ---
 title       : Chapter 2-Standard Data Types
-description : Insert the chapter description here
+description : 
 ---
 ## Introducing Standard Data Types
 
