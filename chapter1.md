@@ -465,7 +465,7 @@ xp: 50
 skills: 1
 key: 242ff20c30
 ```
-When you use an imported module, you have to use the code `module name.function` it is quite inefficient if the module name is too long. Python has a way to increase your effciency. You can import a function using a different name using the keyword `as`. Now you can call the specified funtion by using `specified name.function`.
+When you use an imported module, you have to use the code `module name.function` it is quite inefficient if the module name is too long. Python has a way to increase your effciency. You can import a function using a different name using the keyword `as`. Now you can call the specified function by using `specified name.function`.
 
 `@instructions`
 `import` the module `math` as `m` and fill in the blanks. Also, take a look at the several math functions.
@@ -700,8 +700,8 @@ print(c.days)
 #print out the number of seconds the variable c contains
 print(c.seconds)
 #print out the minute and hour the variable c contains
-print(c.seconds/3600)
 print(c.seconds/60)
+print(c.seconds/3600)
 ```
 
 `@sct`
