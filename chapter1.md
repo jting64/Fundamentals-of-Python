@@ -127,6 +127,12 @@ ex. `##this is a comment`
 ex. `"""this is a comment"""`
 3. Multi-line comment: add `"""` at the start and end of your code.
 
+        """
+        this is a comment
+        this is a comment too
+        this is also a comment
+        """
+
 `@instructions`
 - comment out the code with any way you like.
 
@@ -150,6 +156,11 @@ key: '1e51949928'
 ```
 
 A variable is a way to store datas in python. You can name the value you want to store to make your coding process more efficient and readable. There are many types of variables, each of them function in different ways by storing different types of value. These types of values include integers, floating point numbers(number with decimal places), strings, boolean(True or False), lists...etc. In this lesson, you will learn how to declare and use a variable.
+Declaring the variable is easy, just type `variable name = value`. For example, if you want to declare an `integer variable`, you can type `variable = 3`.
+Some reminders:
+- the variable name cannot have white spaces.
+- for the declaration of `string` variables, you have to surround your text with either `" "` or `' '`.
+- `True` and `False` is capitalized.
 
 `@instructions`
 - print out the value of the variables by typing their names into the `print()` function
@@ -164,7 +175,7 @@ print out `True` by using `print(bool_variable)`
 ```{python}
 integer_variable = 1
 string_variable = 'Hi'
-float_variable = 0.1
+float_variable = 0.5
 bool_variable = True
 
 print(___)
@@ -176,7 +187,7 @@ print(___)
 `@solution`
 ```{python}
 integer_variable = 1
-string_variable = 'Hi'
+string_variable = "Hi"
 float_variable = 0.5
 bool_variable = True
 
@@ -234,14 +245,14 @@ e = ___
 age = 30
 print("age: " + str(30))
 
-e_string = "2.71828"
+e_str = "2.71828"
 e = float(e_str)
 ```
 
 `@sct`
 ```{python}
-test_function("str", not_called_msg = "On the line with `print()`, make sure to change `30` to `str(30)`.")
-test_function("float", not_called_msg = "In order to convert `e_str` to a float, be sure to use the `float()` function.")
+test_function("str", 1, not_called_msg = "On the line with `print()`, make sure to change `30` to `str(30)`.", incorrect_msg = "On the line with `print()`, make sure to change `30` to `str(30)`.")
+test_function("float", 1, not_called_msg = "In order to convert `e_str` to a float, be sure to use the `float()` function.", incorrect_msg = "In order to convert `e_str` to a float, be sure to use the `float()` function.")
 success_msg("Great Job! Head on to the next section to learn about operators")
 ```
 ---
@@ -510,8 +521,8 @@ print(x)
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-test_import("math", same_as = False, not_imported_msg="did you import the math module?", incorrect_as_msg = "did you import the math module `as m`?")
-sucess_msg("Head on to the next section to learn how to import specific functions using from")
+test_import("math", same_as = True, not_imported_msg="did you import the math module?", incorrect_as_msg = "did you import the math module `as m`?")
+success_msg("Head on to the next section to learn how to import specific functions using from")
 ```
 ---
 ## Lesson 4.3-importing modules into python(3)
@@ -544,12 +555,11 @@ from math import sqrt
 x = 5
 y = sqrt(x)
 print(y)
-
 ```
 `@sct`
 ```{python}
 # SCT written with pythonwhat: https://github.com/datacamp/pythonwhat/wiki
-test_import("math.sqrt()", same_as = False, not_imported_msg="did you import sqrt from math?" )
+test_import("math.sqrt", same_as = False, not_imported_msg="did you import sqrt from math?" )
 success_msg("Great Job, head on to the next section to learn about how to use file I/O")
 ```
 ---
@@ -573,9 +583,10 @@ The `read_csv` function of the `pandas` module reads in the data of the argument
 `@sample_code`
 ```{python}
 ___
-___.read_csv("https://s3.ap-northeast-2.amazonaws.com/datacamp-fundamentals-of-python/SacramentocrimeJanuary2006.csv")
 
-#read in data
+# read in data
+
+___.read_csv("https://s3.ap-northeast-2.amazonaws.com/datacamp-fundamentals-of-python/SacramentocrimeJanuary2006.csv")
 ```
 
 `@hint`
@@ -725,6 +736,7 @@ The datetime module has an instance called datetime. The datetime function is us
 
 `@sample_code`
 ```{python}
+___
 ___
 a = datetime(2012, 9, 23)
 #add 10 days to the variable a
